@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "horo-pstack"
+dynamic = ["version"]
+description = "pstack skills (Lauren Tan, MIT) packaged as a Hermes plugin for pip-only installs"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "src/horo_pstack/_vendor/LICENSE"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Upstream = "https://github.com/cursor/plugins/tree/main/pstack"
+
+[project.entry-points."hermes_agent.plugins"]
+pstack = "horo_pstack"
+
+[tool.setuptools.dynamic]
+version = { attr = "horo_pstack._version.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+horo_pstack = ["_vendor/**/*"]

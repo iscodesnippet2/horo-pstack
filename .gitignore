@@ -1,0 +1,8 @@
+src/horo_pstack/_vendor/
+src/horo_pstack/_version.py
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.cdx.json
+uv.lock
